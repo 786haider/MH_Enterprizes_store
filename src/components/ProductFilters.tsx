@@ -11,7 +11,7 @@ export function ProductFilters({ basePath, filters, categories, brands, facets }
   const mains = categories.filter((c) => !c.parent_id);
   return (
     <details className="border border-line bg-white lg:open:block" open>
-      <summary className="flex min-h-[48px] cursor-pointer items-center px-4 font-serif text-xl text-navy lg:pointer-events-none">Filters</summary>
+      <summary className="flex min-h-[48px] cursor-pointer items-center px-4 font-serif text-xl text-navy transition-colors hover:text-gold-dark lg:pointer-events-none">Filters</summary>
       <form method="get" action={basePath} className="space-y-4 border-t border-line p-4">
         <div><label htmlFor="f-q" className="label">Search</label><input id="f-q" name="q" defaultValue={filters.q} className="input" placeholder="Name, SKU, brand…" /></div>
         <div><label htmlFor="f-category" className="label">Category</label>

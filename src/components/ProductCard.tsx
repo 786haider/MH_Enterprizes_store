@@ -8,7 +8,7 @@ import { WhatsAppButton } from "./WhatsAppButton";
 export function ProductCard({ product: p, settings }: { product: Product; settings: Settings }) {
   const price = p.discount_price ?? p.price;
   return (
-    <article className="group flex flex-col border border-line bg-white transition-shadow hover:shadow-soft">
+    <article className="group flex flex-col border border-line bg-white transition duration-300 ease-out hover:-translate-y-1 hover:shadow-soft">
       <Link href={`/products/${p.slug}`} className="relative block aspect-square overflow-hidden bg-paper" aria-label={p.name}>
         <ProductImage src={p.images[0]?.url} alt={p.images[0]?.alt || p.name} />
         {p.new_arrival && <span className="absolute left-0 top-3 bg-gold px-2 py-1 text-xs font-semibold text-white">New</span>}

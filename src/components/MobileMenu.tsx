@@ -19,12 +19,12 @@ export function MobileMenu() {
     <div className="lg:hidden">
       <button type="button" onClick={() => setOpen(true)} aria-label="Open menu" aria-expanded={open} aria-controls="mobile-nav" className="flex h-11 w-11 items-center justify-center text-navy"><Menu /></button>
       {open && (
-        <div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu" className="fixed inset-0 z-[60] overflow-y-auto bg-white">
+        <div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu" className="motion-menu fixed inset-0 z-[60] overflow-y-auto bg-white">
           <div className="container-x flex h-16 items-center justify-between"><span className="font-serif text-xl font-semibold text-navy">Menu</span>
             <button type="button" onClick={close} aria-label="Close menu" className="flex h-11 w-11 items-center justify-center text-navy"><X /></button></div>
           <div className="container-x space-y-6 pb-10 pt-2">
             <div onClick={(e) => (e.target as HTMLElement).closest("a,button[type=submit]") && close()}><ProductSearch /></div>
-            <ul className="divide-y divide-line">
+            <ul className="motion-stagger divide-y divide-line">
               {NAV.map((item) => (
                 <li key={item.href} className="py-3">
                   <Link href={item.href} onClick={close} className="block text-lg font-semibold text-navy">{item.label}</Link>
